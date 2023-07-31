@@ -13,11 +13,11 @@ class BookBatch(models.Model):
     category = models.ForeignKey(to='Category', on_delete=models.PROTECT)
     description = models.CharField(max_length=1000)
     quantity = models.PositiveBigIntegerField()
-    rented = models.PositiveBigIntegerField()
-    loss = models.PositiveBigIntegerField()
+    rented = models.PositiveBigIntegerField(default=0)
+    loss = models.PositiveBigIntegerField(default=0)
 
 
 class Book(models.Model):
     batch_id = models.ForeignKey(
         to='BookBatch', on_delete=models.PROTECT, unique=False)
-    status = models.PositiveSmallIntegerField()
+    status = models.IntegerField(default=0)
