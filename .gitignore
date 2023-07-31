@@ -1,1 +1,5 @@
 django/
+.vscode/
+lib_system/admin_page/migrations/
+lib_system/admin_page/__pycache__/
+lib_system/lib_system/__pycache__/
